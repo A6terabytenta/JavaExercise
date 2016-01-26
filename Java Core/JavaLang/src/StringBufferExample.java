@@ -18,7 +18,7 @@ public class StringBufferExample {
 
 	public static String replace(String text, String s) {
 		StringBuffer stringBuffer = new StringBuffer(text);
-		stringBuffer.replace(0, 5, s);
+		stringBuffer.replace(0, 2, s);
 		return stringBuffer.toString();
 	}
 
@@ -38,12 +38,35 @@ public class StringBufferExample {
 		return stringBuffer.substring(start, end);
 	}
 
+	public static String delete(String text, int startIndex, int endIndex) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		stringBuffer.delete(startIndex, endIndex);
+		return stringBuffer.toString();
+	}
+
+	public static String deleteChartAt(String text, int index) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		stringBuffer.deleteCharAt(index);
+		return stringBuffer.toString();
+	}
+
+	public static char chartAt(String text, int index) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		return stringBuffer.charAt(index);
+	}
+
 	public static void main(String[] args) {
 		String text = " Hello ";
 		String s = "Nguyen Tuan Anh";
 		System.out.println("Append s to text: " + append(text, s));
 		System.out.println("Insert s to text: " + insert(text, s));
+		System.out.println("Replace s to text: " + replace(text, s));
+		System.out.println("Reverse text: " + reverse(text));
 		System.out.println("Capacity: " + capacity(text));
 		System.out.println("SubString: " + subString(text, 1, 6));
+		System.out.println("Delete text with start index 1 and end index 3: " + delete(text, 1, 3));
+		System.out.println("Delete charactor at index 2: " + deleteChartAt(text, 2));
+		System.out.println("Chart at index 2: " + chartAt(text, 2));
+
 	}
 }
