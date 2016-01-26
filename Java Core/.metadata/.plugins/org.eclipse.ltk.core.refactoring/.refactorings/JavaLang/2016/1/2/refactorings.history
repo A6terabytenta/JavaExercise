@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;StringBuilderExample&apos; to &apos;StringBufferExample&apos;&#x0D;&#x0A;- Original project: &apos;JavaLang&apos;&#x0D;&#x0A;- Original element: &apos;StringBuilderExample&apos;&#x0D;&#x0A;- Renamed element: &apos;StringBufferExample&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;StringBuilderExample&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{StringBuilderExample.java[StringBuilderExample" matchStrategy="1" name="StringBufferExample" qualified="false" references="true" similarDeclarations="false" stamp="1452158836771" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+public class StringBuilderExample {
+	public static void append(String s) {
+		StringBuffer stringBuffer = new StringBuffer(s);
+		
+		stringBuffer.append("");
+	}
+	
+	public static void main(String[] args) {
+
+	}
+}

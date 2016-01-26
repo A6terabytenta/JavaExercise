@@ -1,0 +1,13 @@
+package example;
+
+import java.io.File;
+
+public class FileOutputStreamExample {
+	public static void writeFile(String resource) {
+		File file = new File(resource);
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,19 @@
+package set.treeset;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class Main {
+	public static void main(String[] args) {
+		Date d1 = new Date("22/12/2015");
+		Date d2 = new Date("21/12/2015");
+		Product p1 = new Product("A", d1);
+		Product p2 = new Product("B", d2);
+		
+		List<Product> list = new ArrayList<Product>();
+		list.add(p1);
+		list.add(p2);
+		System.out.println(list);
+	}
+}

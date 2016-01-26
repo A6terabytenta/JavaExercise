@@ -1,0 +1,13 @@
+package date;
+
+import java.sql.Date;
+
+public class DateExample {
+	public static void main(String[] args) {
+		Date date = new Date(2015, 12, 25);
+		
+		System.out.println(date.getDate());
+		System.out.println(date.getDay());
+		System.out.println(date.getYear());
+	}
+}

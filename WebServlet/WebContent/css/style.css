@@ -1,0 +1,23 @@
+.tittle {
+	width: 20%;
+}
+
+.item {
+	width: 40px;
+	height: 40px;
+	float: left;
+	clear: right;
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #cccccc;
+	margin-right: 2px;
+	font-size: 20px;
+}
+
+.item:hover {
+	border: 2px solid #bdf4b1;
+}
+
+.itemActive {
+	background: #bdf4b1;
+}

@@ -1,0 +1,7 @@
+package java.io;
+
+public class FileInputStreamExample {
+	public static void readFile(String resource) {
+		
+	}
+}

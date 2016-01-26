@@ -1,0 +1,7 @@
+package example;
+
+public class FileOutputStreamExample {
+	public static void writeFile(String resource) {
+		String text = "Nguyen Tuan Em";
+	}
+}

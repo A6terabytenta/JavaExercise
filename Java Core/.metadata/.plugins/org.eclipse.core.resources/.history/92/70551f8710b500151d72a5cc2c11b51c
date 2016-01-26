@@ -1,0 +1,11 @@
+package set.treeset;
+
+import java.util.Calendar;
+import java.util.Date;
+
+public class Main {
+	public static void main(String[] args) {
+		Date date = new Date("22/12/2015");
+		Product p1 = new Product("A", new Date("22/12/2015"));
+	}
+}

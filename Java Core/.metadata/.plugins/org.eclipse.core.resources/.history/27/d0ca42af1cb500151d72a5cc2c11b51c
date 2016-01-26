@@ -1,0 +1,21 @@
+package example;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class FileInputStreamExample {
+	public static void readFile(String resource) throws FileNotFoundException {
+		File file = new File(resource);
+
+		FileInputStream fis = new FileInputStream(file);
+		
+		byte[] buffer = new byte[2014];
+		
+
+	}
+
+	public static void main(String[] args) throws FileNotFoundException {
+		readFile("example.txt");
+	}
+}

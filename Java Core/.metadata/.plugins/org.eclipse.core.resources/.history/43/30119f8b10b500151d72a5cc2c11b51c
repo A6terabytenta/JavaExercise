@@ -1,0 +1,41 @@
+package set.treeset;
+
+
+public class Product implements Comparable<Product>{
+	private String name;
+	private Date date;
+
+	public Product(String name, Date date) {
+		super();
+		this.name = name;
+		this.date = date;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", date=" + date + "]";
+	}
+
+	@Override
+	public int compareTo(Product o) {
+		// TODO Auto-generated method stub
+		return this.date.compareTo(o.date);
+	}
+
+}

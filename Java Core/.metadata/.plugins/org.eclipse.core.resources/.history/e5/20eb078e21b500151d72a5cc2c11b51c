@@ -1,0 +1,38 @@
+public class StringBuilderExample {
+	public static String append(String text, String s) {
+		StringBuilder stringBuilder = new StringBuilder(text);
+		stringBuilder.append(s);
+		return stringBuilder.toString();
+	}
+
+	public static String insert(String text, String s) {
+		StringBuilder stringBuilder = new StringBuilder(text);
+		stringBuilder.insert(0, s);
+		return stringBuilder.toString();
+	}
+
+	public static String replace(String text, String s) {
+		StringBuilder stringBuilder = new StringBuilder(text);
+		stringBuilder.replace(0, 5, s);
+		return stringBuilder.toString();
+	}
+
+	public static String reverse(String text, String s) {
+		StringBuilder stringBuilder = new StringBuilder(text);
+		stringBuilder.reverse();
+		return stringBuilder.toString();
+	}
+	
+	public static String subString(String text, int beginIndex) {
+		StringBuilder stringBuilder = new StringBuilder(text);
+		return stringBuilder.substring(beginIndex).toString();
+	}
+
+	public static void main(String[] args) {
+		String text = " Hello ";
+		String s = "Nguyen Tuan Anh";
+		System.out.println(append(text, s));
+		System.out.println(insert(text, s));
+		System.out.println(subString(text, 1));
+	}
+}

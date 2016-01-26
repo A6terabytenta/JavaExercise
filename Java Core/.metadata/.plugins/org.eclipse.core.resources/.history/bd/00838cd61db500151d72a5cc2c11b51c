@@ -1,0 +1,16 @@
+package example;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class FileOutputStreamExample {
+	public static void writeFile(String source, String target) throws IOException {
+		File fileInput = new File(source);
+		File fileOutput = new File(target);
+		FileInputStream fis = new FileInputStream(fileInput);
+		
+		
+	}
+}

@@ -1,0 +1,14 @@
+package example;
+
+import java.io.File;
+import java.io.FileInputStream;
+
+public class FileOutputStreamExample {
+	public static void writeFile(String source, String target) {
+		File fileInput = new File(source);
+		
+		FileInputStream fis = new FileInputStream(file);
+		
+		
+	}
+}

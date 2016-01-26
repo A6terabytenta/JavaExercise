@@ -1,0 +1,4 @@
+INDEX VERSION 1.127+C:\Users\Phan\Google Drive\NguyenTuanAnh\Document\Java_Week2\Java Core\.metadata\.plugins\org.eclipse.jdt.core
+3251260696.index
+3004292432.index
+782597081.index

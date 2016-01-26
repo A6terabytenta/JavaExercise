@@ -1,0 +1,6 @@
+package conllections;
+
+public class Student {
+private int mssv;
+private String name;
+}

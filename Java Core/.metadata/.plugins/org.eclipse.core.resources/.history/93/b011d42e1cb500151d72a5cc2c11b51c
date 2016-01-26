@@ -1,0 +1,11 @@
+package java.io;
+
+public class FileInputStreamExample {
+	public static void readFile(String resource) throws FileNotFoundException {
+		File file = new File(resource);
+		
+		FileInputStream fis = new FileInputStream(file);
+		
+		fis.read();
+	}
+}

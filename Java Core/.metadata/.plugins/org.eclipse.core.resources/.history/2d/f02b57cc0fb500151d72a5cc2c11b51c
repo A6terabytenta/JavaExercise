@@ -1,0 +1,8 @@
+package set.treeset;
+
+import java.sql.Date;
+
+public class Product {
+	private String name;
+	private Date date;
+}

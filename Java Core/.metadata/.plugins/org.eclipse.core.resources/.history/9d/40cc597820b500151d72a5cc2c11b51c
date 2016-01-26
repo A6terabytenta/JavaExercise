@@ -1,0 +1,25 @@
+public class StringBuilderExample {
+	public static String append(String text, String s) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		stringBuffer.append(s);
+	}
+
+	public static void insert(String text, String s) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		stringBuffer.insert(0, s);
+	}
+
+	public static void replace(String text, String s) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		stringBuffer.replace(0, 5, s);
+	}
+	
+	public static void replace(String text, String s) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		stringBuffer.replace(0, 5, s);
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

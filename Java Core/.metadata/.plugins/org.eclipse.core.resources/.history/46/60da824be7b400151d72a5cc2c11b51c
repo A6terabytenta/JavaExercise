@@ -1,0 +1,20 @@
+package set.treeset;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+public class TreeSetExample {
+	public static void main(String[] args) {
+		Set<String> treeSet = new TreeSet<String>();
+		
+		treeSet.add("A");
+		treeSet.add("B");
+		treeSet.add("C");
+		
+		System.out.println(treeSet.size());
+		
+		for(String s : treeSet) {
+			System.out.print(s + " ");
+		}
+	}
+}

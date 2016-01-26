@@ -1,0 +1,8 @@
+package collections;
+
+public class CollectionExample {
+	public static void main(String[] args) {
+		Student s1 = new Student(1, "Nguyen Tuan Anh");
+		Student s2 = new Student(2, "Nguyen Tuan Anh");
+	}
+}
