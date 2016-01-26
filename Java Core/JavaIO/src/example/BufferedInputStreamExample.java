@@ -6,6 +6,13 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 public class BufferedInputStreamExample {
+
+	/**
+	 * @author TA
+	 * @param resource
+	 * @throws IOException
+	 * Execute: read file index.txt
+	 */
 	public static void readFile(String resource) throws IOException {
 		File file = new File(resource);
 		FileInputStream fis = new FileInputStream(file);

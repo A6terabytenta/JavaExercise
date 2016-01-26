@@ -1,4 +1,4 @@
-package map.properties;
+package properties;
 
 import java.util.Properties;
 
@@ -26,7 +26,9 @@ public class PropertiesExample {
 
 		System.out.println("Remove object 1: " + properties.remove("1"));
 
-		System.out.println(properties.entrySet());
+		System.out.println("Entry Set: " + properties.entrySet());
+		
+		System.out.println("Get property at index 2: " + properties.getProperty("2"));
 
 	}
 }

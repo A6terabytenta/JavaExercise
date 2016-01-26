@@ -14,7 +14,7 @@ public class LHMap {
 		for (int key : linkedHashMap.keySet()) {
 			System.out.println(key + ":" + linkedHashMap.get(key));
 		}
-		
+
 		System.out.println("Size: " + linkedHashMap.size());
 
 		System.out.println("Remove index 2: " + linkedHashMap.remove(2));

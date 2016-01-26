@@ -22,7 +22,7 @@ public class StringBuilderExample {
 		stringBuilder.reverse();
 		return stringBuilder.toString();
 	}
-	
+
 	public static String subString(String text, int beginIndex) {
 		StringBuilder stringBuilder = new StringBuilder(text);
 		return stringBuilder.substring(beginIndex).toString();

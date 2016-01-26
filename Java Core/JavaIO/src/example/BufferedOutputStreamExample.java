@@ -8,6 +8,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class BufferedOutputStreamExample {
+
+	/**
+	 * @author TA
+	 * @param source
+	 * @param target
+	 * @throws IOException
+	 * Execute: Write contents of file input to file output
+	 */
 	public static void writeFile(String source, String target)
 			throws IOException {
 		File fileInput = new File(source);
