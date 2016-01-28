@@ -105,5 +105,15 @@ public class HashMap implements MapInterface {
 		System.out.println("Constains value A: " + map.containsValue("A"));
 
 		System.out.println("Constains key 5: " + map.containsKey(5));
+
+		// {1=A, 2=B, 3=C}
+		// keySet: [1, 2, 3]
+		// putAll:{1=A, 2=B, 3=C, 5=C}
+		// Size: 4
+		// Remove value: A
+		// Is Empty: false
+		// Constains value D: false
+		// Constains value A: false
+		// Constains key 5: true
 	}
 }

@@ -119,5 +119,24 @@ public class Vector implements ListInterface {
 		System.out.println("RetainAll: "
 				+ vector.getList().retainAll(arrayList));
 		System.out.println(vector.getList());
+		
+		// [A, B, C]
+		// Size: 3
+		// Is Emplty: false
+		// Contains: true
+		// Iterator: java.util.Vector$Itr@1b701da1
+		// To Array: [Ljava.lang.String;@726f3b58
+		// Add D: true
+		// Add A: true
+		// [A, B, C, D, A]
+		// Remove A: true
+		// [B, C, D, A]
+		// set 1 E: E
+		// [B, E, D, A]
+		// Clone: [B, E, D, A]
+		// Capacity: 10
+		// Element At 2: D
+		// RetainAll: true
+		// [E, A]
 	}
 }

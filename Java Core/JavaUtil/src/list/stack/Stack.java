@@ -120,5 +120,26 @@ public class Stack implements ListInterface {
 
 		System.out.println("Peek: " + stack.getList().peek());
 		System.out.println("Stack: " + stack.getList());
+		
+		// [A, B, C]
+		// Size: 3
+		// Is Emplty: false
+		// Contains: true
+		// Iterator: java.util.Vector$Itr@1b701da1
+		// To Array: [Ljava.lang.String;@726f3b58
+		// Add D: true
+		// Add A: true
+		// [A, B, C, D, A]
+		// Remove A: true
+		// [B, C, D, A]
+		// set 1 E: E
+		// [B, E, D, A]
+		// Stack: [B, E, D, A]
+		// Push:D
+		// Stack: [B, E, D, A, D]
+		// Pop: D
+		// Stack: [B, E, D, A]
+		// Peek: A
+		// Stack: [B, E, D, A]
 	}
 }

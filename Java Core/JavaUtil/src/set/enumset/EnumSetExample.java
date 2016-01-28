@@ -17,6 +17,8 @@ public class EnumSetExample {
 
 		main4(list);
 
+		// Set:[ONE, TWO, THREE]
+
 	}
 
 	public static void main2(Numbers[] fakeargs) {

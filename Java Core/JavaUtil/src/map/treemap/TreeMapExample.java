@@ -41,6 +41,25 @@ public class TreeMapExample {
 		System.out.println("Head Map: " + treeMap.headMap(1));
 		
 		System.out.println("Lower Entry: " + treeMap.lowerEntry(1));
+		
+		// 1:A
+		// 2:B
+		// 3:C
+		// Size: 3
+		// Remove index 2: B
+		// Is Empty: false
+		// Constains value D: false
+		// Constains value A: true
+		// Constains key 5: false
+		// Ceiling Entry, key = 1: 1=A
+		// Ceiling Entry, key = 5: null
+		// Ceiling Key = 1: 1
+		// Descending Key Set: [3, 1]
+		// Descending Map: {3=C, 1=A}
+		// Floor Entry: 1=A
+		// Floor Key: 1
+		// Head Map: {}
+		// Lower Entry: null
 	}
 }
 

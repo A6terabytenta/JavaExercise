@@ -28,5 +28,12 @@ public class HashSetExample {
 		for (String s : element) {
 			System.out.print(s + " ");
 		}
+		
+		// 3
+		// Clone: [A, B, C]
+		// Iterator
+		// A B C
+		// toArray
+		// A B C
 	}
 }

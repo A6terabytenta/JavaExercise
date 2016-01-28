@@ -85,6 +85,7 @@ public class ArrayList implements ListInterface {
 
 	public static void main(String[] args) {
 		ArrayList arrayList = new ArrayList();
+
 		System.out.println(arrayList.list);
 
 		System.out.println("Size: " + arrayList.size());
@@ -109,5 +110,18 @@ public class ArrayList implements ListInterface {
 
 		System.out.println(arrayList.getList());
 	}
+
+	// [A, B, C]
+	// Size: 3
+	// Is Emplty: false
+	// Contains: true
+	// Iterator: java.util.ArrayList$Itr@1b701da1
+	// To Array: [Ljava.lang.String;@726f3b58
+	// Add D: true
+	// [A, B, C, D]
+	// Remove A: true
+	// [B, C, D]
+	// set 1 E: E
+	// [B, E, D]
 
 }

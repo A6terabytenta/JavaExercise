@@ -4,6 +4,12 @@ public class StringBuilderExample {
 		stringBuilder.append(s);
 		return stringBuilder.toString();
 	}
+	
+
+	public static int codePointAt(String text, int index) {
+		StringBuilder stringBuilder = new StringBuilder(text);
+		return stringBuilder.codePointAt(index);
+	}
 
 	public static String insert(String text, String s) {
 		StringBuilder stringBuilder = new StringBuilder(text);
@@ -54,5 +60,6 @@ public class StringBuilderExample {
 		System.out.println("Delete text with start index 1 and end index 3: " + delete(text, 1, 3));
 		System.out.println("Delete charactor at index 2: " + deleteChartAt(text, 2));
 		System.out.println("Chart at index 2: " + chartAt(text, 2));
+		System.out.println("Code point at index 2: " + codePointAt(text, 2));
 	}
 }

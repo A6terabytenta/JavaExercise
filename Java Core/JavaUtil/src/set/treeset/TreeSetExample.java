@@ -30,5 +30,13 @@ public class TreeSetExample {
 		for (String s : element) {
 			System.out.print(s + " ");
 		}
+		
+		// 3
+		// Clone: [A, B, C]
+		// Ceiling A: A
+		// Iterator
+		// A B C
+		// toArray
+		// A B C
 	}
 }

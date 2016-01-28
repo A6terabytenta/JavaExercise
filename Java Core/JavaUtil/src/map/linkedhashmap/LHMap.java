@@ -21,10 +21,22 @@ public class LHMap {
 
 		System.out.println("Is Empty: " + linkedHashMap.isEmpty());
 
-		System.out.println("Constains value D: " + linkedHashMap.containsValue("D"));
+		System.out.println("Constains value D: "
+				+ linkedHashMap.containsValue("D"));
 
-		System.out.println("Constains value A: " + linkedHashMap.containsValue("A"));
+		System.out.println("Constains value A: "
+				+ linkedHashMap.containsValue("A"));
 
 		System.out.println("Constains key 5: " + linkedHashMap.containsKey(5));
+
+		// 1:A
+		// 2:B
+		// 3:C
+		// Size: 3
+		// Remove index 2: B
+		// Is Empty: false
+		// Constains value D: false
+		// Constains value A: true
+		// Constains key 5: false
 	}
 }

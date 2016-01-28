@@ -10,6 +10,11 @@ public class StringBufferExample {
 		return stringBuffer.toString();
 	}
 
+	public static int codePointAt(String text, int index) {
+		StringBuffer stringBuffer = new StringBuffer(text);
+		return stringBuffer.codePointAt(index);
+	}
+
 	public static String insert(String text, String s) {
 		StringBuffer stringBuffer = new StringBuffer(text);
 		stringBuffer.insert(0, s);
@@ -56,17 +61,25 @@ public class StringBufferExample {
 	}
 
 	public static void main(String[] args) {
+		StringBuffer buffer = new StringBuffer("TEST");
+		
+		
 		String text = " Hello ";
 		String s = "Nguyen Tuan Anh";
+		
+		System.out.println(buffer.toString());
+		
 		System.out.println("Append s to text: " + append(text, s));
 		System.out.println("Insert s to text: " + insert(text, s));
 		System.out.println("Replace s to text: " + replace(text, s));
 		System.out.println("Reverse text: " + reverse(text));
 		System.out.println("Capacity: " + capacity(text));
 		System.out.println("SubString: " + subString(text, 1, 6));
-		System.out.println("Delete text with start index 1 and end index 3: " + delete(text, 1, 3));
-		System.out.println("Delete charactor at index 2: " + deleteChartAt(text, 2));
+		System.out.println("Delete text with start index 1 and end index 3: "
+				+ delete(text, 1, 3));
+		System.out.println("Delete charactor at index 2: "
+				+ deleteChartAt(text, 2));
 		System.out.println("Chart at index 2: " + chartAt(text, 2));
-
+		System.out.println("Code point at index 2: " + codePointAt(text, 2));
 	}
 }

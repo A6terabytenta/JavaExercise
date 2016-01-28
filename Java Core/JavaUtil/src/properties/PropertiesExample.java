@@ -29,6 +29,16 @@ public class PropertiesExample {
 		System.out.println("Entry Set: " + properties.entrySet());
 		
 		System.out.println("Get property at index 2: " + properties.getProperty("2"));
-
+		
+		// [3=C, 2=B, 1=A]
+		// Is Emplty: false
+		// Clone: {3=C, 2=B, 1=A}
+		// Contains Object A: true
+		// Contains Key 1: true
+		// Contains Value A: true
+		// Key Set: [3, 2, 1]
+		// Remove object 1: A
+		// Entry Set: [3=C, 2=B]
+		// Get property at index 2: B
 	}
 }
