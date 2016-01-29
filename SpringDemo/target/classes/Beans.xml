@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Configuration for Bean Factory Container
+	<bean id="helloWorld" class="com.demo.myapp.ioccontainer.beanfactory.HelloWorld">
+		<property name="message" value="Hello World!" />
+	</bean>
+	 -->
+	
+	<!-- Configuration for Application Context Container
+	<bean id="helloWorld" class="com.demo.myapp.ioccontainer.applicationcontext.HelloWorld">
+		<property name="message" value="Hello World!" />
+	</bean>
+	 -->
+	 
+	<!-- Configuration for Bean Life Cycle
+	<bean id="helloWorld" class="com.demo.myapp.beanlifecycle.HelloWorld"
+       init-method="init" destroy-method="destroy">
+       <property name="message" value="Hello World!"/>
+   	</bean>
+ 	-->
+ 	
+ 	<!-- Configuration for Inner Beans 
+ 	<bean id="textEditor" class="com.demo.myapp.injectinginnerbeans.TextEditor">
+ 		<property name="helloWorld">
+ 			<bean id="helloWorld" class="com.demo.myapp.injectinginnerbeans.HelloWorld"></bean>
+ 		</property> 	
+ 	</bean>
+ 	-->
+ 	<!-- Configuration for Java Collection 
+ 	<bean id="javaCollection" class="com.demo.myapp.injectingcollection.JavaCollection">
+		
+ 		<property name="list">
+ 			<list>
+ 				<value>A</value>
+ 				<value>B</value>
+ 				<value>C</value>
+ 				<value>D</value>
+ 			</list>
+ 		</property>
+ 		
+ 		<property name="set">
+ 			<set>
+ 				<value>A</value>
+ 				<value>B</value>
+ 				<value>C</value>
+ 				<value>D</value>
+ 			</set>
+ 		</property>
+ 		
+ 		<property name="map">
+ 			<map>
+ 				<entry key="1" value="A" />
+ 				<entry key="2" value="B" />
+ 				<entry key="3" value="C" />
+ 				<entry key="4" value="D" />
+ 			</map>
+ 		</property>
+ 		
+ 		<property name="properties">
+ 			<props>
+ 				<prop key="one">A</prop>
+ 				<prop key="two">B</prop>
+ 				<prop key="three">C</prop>
+ 				<prop key="four">D</prop>
+ 			</props>
+ 		</property>
+ 	</bean>
+ 	-->
+ 	
+ 	<!-- Autowiring  byName-->
+ 	<!-- customer has a property name "address" -->
+	<bean id="customer" class="com.demo.myapp.autowirebyname.Customer" autowire="byName" />
+	
+	<bean id="address" class="com.demo.myapp.autowirebyname.Address" >
+		<property name="fulladdress" value="Block A 888, CA" />
+	</bean>
+ 	
+ 	<!-- Autowiring byType -->
+ 	<bean id="preson" class="com.demo.myapp.autowirebytype.Preson" autowire="byType"></bean>
+ 	
+ 	<bean id="invisible" class="com.demo.myapp.autowirebytype.Ability" >
+		<property name="skill" value="Invisible" />
+	</bean>
+	<!-- Error UnsatisfiedDependencyException
+	<bean id="fly" class="com.demo.myapp.autowirebytype.Ability" >
+		<property name="skill" value="Fly" />
+	</bean>
+	-->
+	
+	<!-- Autowiring Constructor-->
+ 	<!-- customer has a property name "address" -->
+	<bean id="developer" class="com.demo.myapp.autowirebyconstructor.Developer" autowire="constructor" />
+	
+	<bean id="java" class="com.demo.myapp.autowirebyconstructor.Language" >
+		<property name="language" value="Java" />
+	</bean>
+	
+	<!-- Error UnsatisfiedDependencyException
+	<bean id="php" class="com.demo.myapp.autowirebyconstructor.Language" >
+		<property name="language" value="PHP" />
+	</bean>
+	-->
+	
+</beans>
