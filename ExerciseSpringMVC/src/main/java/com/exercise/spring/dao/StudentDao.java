@@ -12,6 +12,6 @@ public interface StudentDao {
 	public List<Student> getListStudent();
 
 	public Student getStudentById(int studentId);
-	
+
 	public List<Student> search(String element, String value);
 }

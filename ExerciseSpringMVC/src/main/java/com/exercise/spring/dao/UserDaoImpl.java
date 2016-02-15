@@ -3,6 +3,7 @@ package com.exercise.spring.dao;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -24,10 +25,11 @@ public class UserDaoImpl implements UserDao {
 		return sessionFactory;
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public boolean checkUser(User user) {
 		// TODO Auto-generated method stub
-		boolean check = false;
+		boolean check = true;
 		Session session = null;
 		Transaction transaction = null;
 		try {
@@ -35,7 +37,16 @@ public class UserDaoImpl implements UserDao {
 			transaction = session.beginTransaction();
 			transaction.setTimeout(5);
 
-			//
+			String hql = "from User where username = :username and password = :password"; 
+			Query query = session.createQuery(hql);
+			query.setParameter("username", user.getUsername());
+			query.setParameter("password", user.getPassword());
+			List results = query.list();
+			if(results.size() == 0) {
+				check = false;
+			} else {
+				check = true;
+			}
 
 			transaction.commit();
 		} catch (RuntimeException re) {

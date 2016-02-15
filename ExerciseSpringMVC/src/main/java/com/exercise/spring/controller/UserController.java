@@ -11,6 +11,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -106,6 +108,28 @@ public class UserController {
 		}
 
 		return status;
+	}
+
+	@RequestMapping(value = "/studentManagement", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	public String checkLogin(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("User") User user,
+			ModelMap model) throws ParseException {
+		try {
+			request.setCharacterEncoding("utf-8");
+			response.setCharacterEncoding("utf-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+
+		boolean check = userService.checkUser(user);
+		System.out.println(check);
+		if (check == true) {
+			model.remove("error");
+			return "studentManagement";
+		} else {
+			model.addAttribute("error", "error");
+			return "home";
+		}
 	}
 
 }

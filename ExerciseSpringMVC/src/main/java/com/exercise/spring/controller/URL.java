@@ -32,9 +32,4 @@ public class URL {
 	public String student(HttpSession session, Locale locale, Model model) {
 		return "student";
 	}
-	
-	@RequestMapping(value = "/studentManagement", method = RequestMethod.GET)
-	public String studentManagement(HttpSession session, Locale locale, Model model) {
-		return "studentManagement";
-	}
 }

@@ -11,11 +11,11 @@ import com.exercise.spring.model.Student;
 
 @Service
 @Transactional
-public class StudentServiceImpl implements StudentService{
-	
+public class StudentServiceImpl implements StudentService {
+
 	@Autowired
 	private StudentDao studentDao;
-	
+
 	@Override
 	public void saveOrUpdateStudent(Student student) {
 		// TODO Auto-generated method stub
