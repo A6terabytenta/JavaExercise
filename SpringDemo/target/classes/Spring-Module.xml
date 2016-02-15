@@ -5,6 +5,7 @@
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 	<import resource="database/dataSource.xml" />
-	<import resource="student/Spring-Customer.xml" />
+	<import resource="student/Spring-Student.xml" />
 
 </beans>
+

@@ -105,4 +105,13 @@
 	</bean>
 	-->
 	
+	
+	<!-- Event Handling -->
+	<bean id="eventHandling" class="com.demo.myapp.eventhandling.HelloWorld">
+		<property name="message" value="Nguyen Tuan Anh"></property>
+	</bean>
+	<bean id="cStartEventHandling" class="com.demo.myapp.CStartEventHandling">
+	</bean>
+	<bean id="cStopEventHandling" class="com.demo.myapp.CStopEventHandling">
+	</bean>
 </beans>

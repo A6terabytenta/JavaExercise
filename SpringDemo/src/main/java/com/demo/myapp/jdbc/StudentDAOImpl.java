@@ -4,6 +4,9 @@ import java.sql.*;
 
 import javax.sql.DataSource;
 
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
 public class StudentDAOImpl implements StudentDAO {
 	private DataSource dataSource;
 
