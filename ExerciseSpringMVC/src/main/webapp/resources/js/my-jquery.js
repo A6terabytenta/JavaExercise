@@ -39,13 +39,13 @@ function previous() {
 }
 
 function next(numberPage, length) {
+	currentPage = currentPage + 1;
     if (currentPage == numberPage) {
         begin = ((numberPage - 1) * maxSize);
         currentPage = numberPage;
         end = length;
         console.log(begin + " " + end);
     } else {
-    	currentPage = currentPage + 1;
         begin = begin + maxSize;
         end = begin + maxSize;
     }
@@ -65,46 +65,110 @@ function last(numberPage, length) {
 
 init(begin, end, currentPage, listStudent);
 
+function checkUnicode(string) {
+	string = string.toLowerCase();
+	string = string.replace(/á|à|ạ|ả|ã|ắ|ằ|ẳ|ẵ|ặ|ấ|ầ|ẫ|ậ|ẩ/g,"a");
+	string = string.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e");
+	string = string.replace(/ì|í|ị|ỉ|ĩ/g,"i");
+	string = string.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g,"o");
+	string = string.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g,"u");
+	string = string.replace(/ỳ|ý|ỵ|ỷ|ỹ/g,"y");
+	string = string.replace(/đ/g,"d");
+	string = string.replace(/,|;/g," ");
+	console.log(string.trim());
+	for(var index = 0; index < string.length; index++) {
+		var char = string.charCodeAt(index);
+		console.log(char);
+		if(char < 97 || char > 122) {
+			if(char != 32) {
+				return false;
+			}
+		}
+	}
+	return true;
+	
+}
+
+function checkValidateNumber(value) {
+	if(isNaN(parseInt(value))) {
+		return false;
+	}
+	return true;
+}
+
 function checkValidate() {
+	setdefaultBackground();
     check = true;
     if (studentName.value == "" || studentName.value == null) {
         check = false;
         studentName.style.background = "#ffe1e1";
+        notification("error", "Student Name", "is not null");
+    } else if(studentName.value.length > 100) {
+    	check = false;
+        studentName.style.background = "#ffe1e1";
+        notification("error", "Student Name", "1 -> 100 charactors");
+    } else if(!checkUnicode(studentName.value)) {
+    	check = false;
+        studentName.style.background = "#ffe1e1";
+        notification("error", "Student Name", "contains special charactors");
     } else {
-        studentName.style.background = "none";
+    	 if (studentCore.value == "" || studentCore.value == null) {
+    	        check = false;
+    	        studentCore.style.background = "#ffe1e1";
+    	        notification("error", "Student Core", "is not null");
+    	 	} else if(studentCore.value.length > 50) {
+    	    	check = false;
+    	    	studentCore.style.background = "#ffe1e1";
+    	        notification("error", "Student Core", "1 -> 50 charactors");
+    	 	} else if (!checkValidateNumber(studentCore.value)) {
+    	    	check = false;
+    	    	studentCore.style.background = "#ffe1e1";
+     	        notification("error", "Student Core", "is not a string");
+    	    } else {
+    	    	if (address.value == "" || address.value == null) {
+        	        check = false;
+        	        address.style.background = "#ffe1e1";
+        	        notification("error", "Address", "is not null");
+    	    	} else if(address.value.length > 200) {
+    	        	check = false;
+    	        	address.style.background = "#ffe1e1";
+    	            notification("error", "Address", "1 -> 200 charactors");
+    	    	} else if(!checkUnicode(address.value)) {
+    	    	    check = false;
+    	    	    address.style.background = "#ffe1e1";
+    	    	    notification("error", "Address", "contains special charactors");
+        	    } else {
+        	    	if (averageScore.value == "" || averageScore.value == null) {
+            	        check = false;
+            	        averageScore.style.background = "#ffe1e1";
+            	        notification("error", "Average Score", "is not null");
+        	    	} else if (!checkValidateNumber(averageScore.value)) {
+            	    	check = false;
+             	        averageScore.style.background = "#ffe1e1";
+             	        notification("error", "Average Score", "is not a string");
+            	    } else {
+            	    	 if (dateOfBirth.value == "" || dateOfBirth.value == null) {
+                 	        check = false;
+                 	        dateOfBirth.style.background = "#ffe1e1";
+                 	        notification("error", "Birth", "is not null");
+                 	    } else {
+                 	    	setdefaultBackground();
+                 	    }
+            	    }
+            	   
+        	    }
+        	    
+    	    }    
     }
-    if (studentCore.value == "" || studentCore.value == null) {
-        check = false;
-        studentCore.style.background = "#ffe1e1";
-    } else {
-        studentCore.style.background = "none";
-    }
-    if (address.value == "" || address.value == null) {
-        check = false;
-        address.style.background = "#ffe1e1";
-    } else {
-        address.style.background = "none";
-    }
-    if (averageScore.value == "" || averageScore.value == null) {
-        check = false;
-        averageScore.style.background = "#ffe1e1";
-    } else {
-        averageScore.style.background = "none";
-    }
-    if (dateOfBirth.value == "" || dateOfBirth.value == null) {
-        check = false;
-        dateOfBirth.style.background = "#ffe1e1";
-    } else {
-        dateOfBirth.style.background = "none";
-    }
+   
 }
 
 function setdefaultBackground() {
-    studentName.style.background = "none";
-    studentCore.style.background = "#none";
-    address.style.background = "#none";
-    averageScore.style.background = "#none";
-    dateOfBirth.style.background = "#none";
+    studentName.style.background = "#fff";
+    studentCore.style.background = "#fff";
+    address.style.background = "#fff";
+    averageScore.style.background = "#fff";
+    dateOfBirth.style.background = "#fff";
 }
 
 function edit(studentId) {
@@ -205,6 +269,7 @@ function updateStudent() {
         if (check) {
             var student = {
                 studentId: stId,
+                studentName: studentName.value,
                 studentCore: studentCore.value,
                 studentInfo: {
                     infoId: infoId,
@@ -213,6 +278,7 @@ function updateStudent() {
                     dateOfBirth: dateOfBirth.value,
                 }
             }
+            console.log(student);
             $.ajax({
                 method: 'POST',
                 url: host + 'rest/saveOrUpdateStudent',
@@ -233,6 +299,29 @@ function updateStudent() {
         return false;
     }
 }
+
+function notification(type, title, content) {
+	$("#notification").html("");
+	switch(type) {
+	case "error":
+		$("#notification").append("<p><span>Error: " + title + " - </span>" + content + "</p>");
+		$("#notification").css("background","rgba(242,178,175, 0.4)");
+		$("#notification>p>span").css("color","#f49f9a");
+		$("#notification>p").css("color","#f2ada9");
+		break;
+	case "info":
+		$("#notification").append("<p><span>Info: " + title + " - </span>" + content + "</p>");
+		$("#notification").css("background","rgba(103,171,73, 0.4)");
+		$("#notification>p>span").css("color","#55893e");
+		$("#notification>p").css("color","#7cba61");
+		break;
+	}
+	$("#notification").show("slice");
+	setTimeout(function(){
+		$("#notification").hide("slice");
+	}, 5000);
+}
+
 var searchByValue = document.getElementById("searchByValue");
 searchByValue.addEventListener("keypress", function(event) {
     if (event.keyCode == 13) {
@@ -245,13 +334,17 @@ searchByValue.addEventListener("keypress", function(event) {
                 type: 'GET',
                 url: host + "rest/search/" + results[0] + "," + results[1],
                 success: function(response) {
-                	blSearch = true;
-                	listSearch = response;
-                    end = response.length;
-                    if (response.length > maxSize) {
-                        end = maxSize;
-                    }
-                    search(0, end, 1, listSearch);
+                	if(response.length > 0) {
+                		blSearch = true;
+                    	listSearch = response;
+                        end = response.length;
+                        if (response.length > maxSize) {
+                            end = maxSize;
+                        }
+                        search(0, end, 1, listSearch);
+                	} else {
+                		notification("info", "Search", "not searchable values");
+                	}
                 }
             });
         }
@@ -301,6 +394,9 @@ function search(begin, end, currentPage, response) {
         document.getElementById("next").style.cursor = "not-allowed";
         document.getElementById("next").style.color = "#000";
     }
+    $('#dateOfBirth').datepicker({
+		format : "yyyy-mm-dd",
+	})
 }
 
 function sort(value) {
@@ -415,7 +511,9 @@ function init(begin, end, currentPage, listSt) {
                     document.getElementById("next").style.cursor = "not-allowed";
                     document.getElementById("next").style.color = "#000";
                 }
-
+                $('#dateOfBirth').datepicker({
+    				format : "yyyy-mm-dd",
+    			})
             }
         });
 }

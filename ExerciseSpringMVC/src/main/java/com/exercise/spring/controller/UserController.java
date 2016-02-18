@@ -120,7 +120,7 @@ public class UserController {
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
-
+		
 		boolean check = userService.checkUser(user);
 		System.out.println(check);
 		if (check == true) {

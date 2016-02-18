@@ -11,8 +11,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,8 +20,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.exercise.spring.model.Status;
 import com.exercise.spring.model.Student;
 import com.exercise.spring.model.StudentInfo;
-import com.exercise.spring.model.User;
-import com.exercise.spring.service.StudentInfoService;
 import com.exercise.spring.service.StudentService;
 
 @Controller
@@ -32,10 +28,14 @@ public class StudentController {
 
 	@Autowired
 	private StudentService studentService;
-
-	@Autowired
-	private StudentInfoService studentInfoService;
-
+	
+	/**
+	 * @author TA
+	 * @param request
+	 * @param response
+	 * @return List<Student>
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = URL.GETLISTSTUDENT, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody List<Student> getListStudent(
 			HttpServletRequest request, HttpServletResponse response)
@@ -49,7 +49,15 @@ public class StudentController {
 
 		return studentService.getListStudent();
 	}
-
+	
+	/**
+	 * @author TA
+	 * @param request
+	 * @param response
+	 * @param studentId
+	 * @return Student
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = URL.GETSTUDENTBYID, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Student getStudentById(HttpServletRequest request,
 			HttpServletResponse response,
@@ -63,7 +71,15 @@ public class StudentController {
 
 		return studentService.getStudentById(studentId);
 	}
-
+	
+	/**
+	 * @author TA
+	 * @param request
+	 * @param response
+	 * @param studentId
+	 * @return Status
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = URL.DELETESTUDENT, method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Status deleteStudent(HttpServletRequest request,
 			HttpServletResponse response,
@@ -89,6 +105,14 @@ public class StudentController {
 		return status;
 	}
 
+	/**
+	 * @author TA
+	 * @param request
+	 * @param response
+	 * @param student
+	 * @return Status
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = URL.SAVEORUPDATESTUDENT, method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody Status saveOrUpdateStudent(HttpServletRequest request,
 			HttpServletResponse response, @RequestBody Student student)
@@ -131,6 +155,16 @@ public class StudentController {
 
 		return status;
 	}
+	
+	/**
+	 * @author TA
+	 * @param request
+	 * @param response
+	 * @param element
+	 * @param value
+	 * @return List<Student>
+	 * @throws ParseException
+	 */
 	@RequestMapping(value = URL.SEARCH, method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public @ResponseBody List<Student> search(HttpServletRequest request,
 			HttpServletResponse response, @PathVariable("element") String element, @PathVariable("value") String value)
