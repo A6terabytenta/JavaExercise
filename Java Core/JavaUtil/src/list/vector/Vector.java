@@ -119,7 +119,7 @@ public class Vector implements ListInterface {
 		System.out.println("RetainAll: "
 				+ vector.getList().retainAll(arrayList));
 		System.out.println(vector.getList());
-		
+
 		// [A, B, C]
 		// Size: 3
 		// Is Emplty: false

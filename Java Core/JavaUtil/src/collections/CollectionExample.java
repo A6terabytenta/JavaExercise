@@ -18,7 +18,7 @@ public class CollectionExample {
 		Collections.sort(list);
 
 		System.out.println(list);
-		
+
 		// [1: Nguyen Tuan Anh, 2: Vo Tan Loc]
 		// [2: Vo Tan Loc, 1: Nguyen Tuan Anh]
 	}

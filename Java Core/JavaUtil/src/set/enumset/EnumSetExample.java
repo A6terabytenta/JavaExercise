@@ -4,7 +4,6 @@ import java.util.EnumSet;
 
 public class EnumSetExample {
 	public enum Numbers {
-
 		ONE, TWO, THREE, FOUR, FIVE
 	};
 

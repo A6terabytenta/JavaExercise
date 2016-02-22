@@ -48,6 +48,8 @@ public class DeleteStudent extends HttpServlet {
 
 	public void toDo(HttpServletRequest request, HttpServletResponse response)
 			throws IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		int id = Integer.parseInt(request.getParameter("id"));
 		StudentDao studentDao = new StudentDao();
 		studentDao.deleteStudent(studentDao.getStudent(id));

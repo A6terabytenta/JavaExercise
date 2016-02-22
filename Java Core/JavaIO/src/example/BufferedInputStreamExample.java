@@ -12,7 +12,7 @@ public class BufferedInputStreamExample {
 	 * @author TA
 	 * @param resource
 	 * @throws IOException
-	 *             Execute: read file index.txt
+	 * Execute: read file index.txt
 	 */
 	public static void readFile(String resource) {
 		FileInputStream fis = null;

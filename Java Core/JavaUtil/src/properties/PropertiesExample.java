@@ -20,16 +20,18 @@ public class PropertiesExample {
 
 		System.out.println("Contains Key 1: " + properties.containsKey("1"));
 
-		System.out.println("Contains Value A: " + properties.containsValue("A"));
+		System.out
+				.println("Contains Value A: " + properties.containsValue("A"));
 
 		System.out.println("Key Set: " + properties.keySet());
 
 		System.out.println("Remove object 1: " + properties.remove("1"));
 
 		System.out.println("Entry Set: " + properties.entrySet());
-		
-		System.out.println("Get property at index 2: " + properties.getProperty("2"));
-		
+
+		System.out.println("Get property at index 2: "
+				+ properties.getProperty("2"));
+
 		// [3=C, 2=B, 1=A]
 		// Is Emplty: false
 		// Clone: {3=C, 2=B, 1=A}

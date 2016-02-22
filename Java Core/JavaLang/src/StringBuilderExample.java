@@ -4,7 +4,6 @@ public class StringBuilderExample {
 		stringBuilder.append(s);
 		return stringBuilder.toString();
 	}
-	
 
 	public static int codePointAt(String text, int index) {
 		StringBuilder stringBuilder = new StringBuilder(text);
@@ -33,6 +32,7 @@ public class StringBuilderExample {
 		StringBuilder stringBuilder = new StringBuilder(text);
 		return stringBuilder.substring(beginIndex).toString();
 	}
+
 	public static String delete(String text, int startIndex, int endIndex) {
 		StringBuilder stringBuilder = new StringBuilder(text);
 		stringBuilder.delete(startIndex, endIndex);
@@ -49,6 +49,7 @@ public class StringBuilderExample {
 		StringBuilder stringBuilder = new StringBuilder(text);
 		return stringBuilder.charAt(index);
 	}
+
 	public static void main(String[] args) {
 		String text = " Hello ";
 		String s = "Nguyen Tuan Anh";
@@ -57,8 +58,10 @@ public class StringBuilderExample {
 		System.out.println("Replace s to text: " + replace(text, s));
 		System.out.println("Reverse text: " + reverse(text));
 		System.out.println("SubString: " + subString(text, 3));
-		System.out.println("Delete text with start index 1 and end index 3: " + delete(text, 1, 3));
-		System.out.println("Delete charactor at index 2: " + deleteChartAt(text, 2));
+		System.out.println("Delete text with start index 1 and end index 3: "
+				+ delete(text, 1, 3));
+		System.out.println("Delete charactor at index 2: "
+				+ deleteChartAt(text, 2));
 		System.out.println("Chart at index 2: " + chartAt(text, 2));
 		System.out.println("Code point at index 2: " + codePointAt(text, 2));
 	}

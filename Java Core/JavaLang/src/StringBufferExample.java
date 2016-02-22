@@ -3,24 +3,48 @@
  *
  */
 public class StringBufferExample {
-
+	
+	/**
+	 * @author TA
+	 * @param text
+	 * @param s
+	 * @return
+	 */
 	public static String append(String text, String s) {
 		StringBuffer stringBuffer = new StringBuffer(text);
 		stringBuffer.append(s);
 		return stringBuffer.toString();
 	}
-
+	
+	/**
+	 * @author TA
+	 * @param text
+	 * @param index
+	 * @return
+	 */
 	public static int codePointAt(String text, int index) {
 		StringBuffer stringBuffer = new StringBuffer(text);
 		return stringBuffer.codePointAt(index);
 	}
-
+	
+	/**
+	 * @author TA
+	 * @param text
+	 * @param s
+	 * @return
+	 */
 	public static String insert(String text, String s) {
 		StringBuffer stringBuffer = new StringBuffer(text);
 		stringBuffer.insert(0, s);
 		return stringBuffer.toString();
 	}
-
+	
+	/**
+	 * @author TA
+	 * @param text
+	 * @param s
+	 * @return
+	 */
 	public static String replace(String text, String s) {
 		StringBuffer stringBuffer = new StringBuffer(text);
 		stringBuffer.replace(0, 2, s);
@@ -62,13 +86,12 @@ public class StringBufferExample {
 
 	public static void main(String[] args) {
 		StringBuffer buffer = new StringBuffer("TEST");
-		
-		
+
 		String text = " Hello ";
 		String s = "Nguyen Tuan Anh";
-		
+
 		System.out.println(buffer.toString());
-		
+
 		System.out.println("Append s to text: " + append(text, s));
 		System.out.println("Insert s to text: " + insert(text, s));
 		System.out.println("Replace s to text: " + replace(text, s));

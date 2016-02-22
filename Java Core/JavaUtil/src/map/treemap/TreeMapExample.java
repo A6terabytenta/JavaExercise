@@ -25,23 +25,25 @@ public class TreeMapExample {
 		System.out.println("Constains value A: " + treeMap.containsValue("A"));
 
 		System.out.println("Constains key 5: " + treeMap.containsKey(5));
-		
-		System.out.println("Ceiling Entry, key = 1: " + treeMap.ceilingEntry(1));
-		System.out.println("Ceiling Entry, key = 5: " + treeMap.ceilingEntry(5));
+
+		System.out
+				.println("Ceiling Entry, key = 1: " + treeMap.ceilingEntry(1));
+		System.out
+				.println("Ceiling Entry, key = 5: " + treeMap.ceilingEntry(5));
 		System.out.println("Ceiling Key = 1: " + treeMap.ceilingKey(1));
-		
+
 		System.out.println("Descending Key Set: " + treeMap.descendingKeySet());
-		
+
 		System.out.println("Descending Map: " + treeMap.descendingMap());
-		
+
 		System.out.println("Floor Entry: " + treeMap.floorEntry(1));
-		
+
 		System.out.println("Floor Key: " + treeMap.floorKey(1));
-		
+
 		System.out.println("Head Map: " + treeMap.headMap(1));
-		
+
 		System.out.println("Lower Entry: " + treeMap.lowerEntry(1));
-		
+
 		// 1:A
 		// 2:B
 		// 3:C
@@ -62,4 +64,3 @@ public class TreeMapExample {
 		// Lower Entry: null
 	}
 }
-

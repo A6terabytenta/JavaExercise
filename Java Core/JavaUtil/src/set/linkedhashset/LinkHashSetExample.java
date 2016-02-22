@@ -29,7 +29,7 @@ public class LinkHashSetExample {
 		for (String s : element) {
 			System.out.print(s + " ");
 		}
-		
+
 		// 3
 		// Clone: [A, C, B]
 		// Iterator

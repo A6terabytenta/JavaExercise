@@ -120,7 +120,7 @@ public class Stack implements ListInterface {
 
 		System.out.println("Peek: " + stack.getList().peek());
 		System.out.println("Stack: " + stack.getList());
-		
+
 		// [A, B, C]
 		// Size: 3
 		// Is Emplty: false

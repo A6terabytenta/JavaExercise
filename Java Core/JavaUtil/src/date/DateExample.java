@@ -24,14 +24,15 @@ public class DateExample {
 		Date date2 = sdf2.parse(dateInString2);
 		System.out.println(date2);
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		SimpleDateFormat dateFormat = new SimpleDateFormat(
+				"yyyy/MM/dd HH:mm:ss");
 		Date date3 = new Date();
 		System.out.println(dateFormat.format(date3));
 
 		Calendar calendar = Calendar.getInstance();
 		Date date4 = calendar.getTime();
 		System.out.println(date4);
-		
+
 		// Date: 28
 		// Hours: 11
 		// Month: 0

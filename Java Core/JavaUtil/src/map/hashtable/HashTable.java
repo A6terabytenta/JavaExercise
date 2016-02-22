@@ -92,9 +92,11 @@ public class HashTable implements MapInterface {
 
 		System.out.println("Is Empty: " + hashTable.isEmpty());
 
-		System.out.println("Constains value D: " + hashTable.containsValue("D"));
+		System.out
+				.println("Constains value D: " + hashTable.containsValue("D"));
 
-		System.out.println("Constains value A: " + hashTable.containsValue("A"));
+		System.out
+				.println("Constains value A: " + hashTable.containsValue("A"));
 
 		System.out.println("Constains key 5: " + hashTable.containsKey(5));
 	}

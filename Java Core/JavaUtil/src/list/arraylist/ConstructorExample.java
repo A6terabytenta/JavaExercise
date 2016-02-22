@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class ConstructorExample {
 	public static void main(String[] args) {
 		ArrayList<Integer> arrayList = new ArrayList<Integer>();
-		ArrayList<Integer> arrayList3 = new ArrayList<Integer>(10);
 
 		for (int i = 0; i <= 11; i++) {
 			arrayList.add(i);

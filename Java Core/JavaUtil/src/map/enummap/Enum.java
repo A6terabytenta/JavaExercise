@@ -27,12 +27,12 @@ public class Enum {
 
 		EnumMap<STATE, String> enumMap1 = new EnumMap<STATE, String>(enumMap);
 		System.out.println("EnumMap1: " + enumMap1);
-		
-		
-//		Is Empty: false
-//		Get index STATE.PAUSE: Pause game!
-//		Contains key: STATE.NEW: true
-//		Contains valye: End game!: true
-//		EnumMap1: {NEW=New game!, PAUSE=Pause game!, RESUME=Resume game!, END=End game!}
+
+		// Is Empty: false
+		// Get index STATE.PAUSE: Pause game!
+		// Contains key: STATE.NEW: true
+		// Contains valye: End game!: true
+		// EnumMap1: {NEW=New game!, PAUSE=Pause game!, RESUME=Resume game!,
+		// END=End game!}
 	}
 }

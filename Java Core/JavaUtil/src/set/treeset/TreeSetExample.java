@@ -22,7 +22,7 @@ public class TreeSetExample {
 		while (iterator.hasNext()) {
 			System.out.print(iterator.next() + " ");
 		}
-		
+
 		System.out.println("");
 		System.out.println("toArray");
 		String[] element = treeSet.toArray(new String[treeSet.size()]);
@@ -30,7 +30,7 @@ public class TreeSetExample {
 		for (String s : element) {
 			System.out.print(s + " ");
 		}
-		
+
 		// 3
 		// Clone: [A, B, C]
 		// Ceiling A: A

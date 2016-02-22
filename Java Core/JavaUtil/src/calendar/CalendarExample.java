@@ -33,7 +33,7 @@ public class CalendarExample {
 		System.out.println("minute: " + minute);
 		System.out.println("second: " + second);
 		System.out.println("millisecond: " + millisecond);
-		
+
 		// Date: 5
 		// 2016 Jan 28 11:28:16
 		// year: 2016

@@ -20,7 +20,7 @@ function loadPage(value, length) {
     }
     init(begin, end, currentPage, listStudent);
 }
-
+/* Load page 1 */
 function first() {
     currentPage = 1;
     begin = 0;
@@ -56,6 +56,7 @@ function next(numberPage, length) {
     }
 }
 
+/* Load last page*/
 function last(numberPage, length) {
     currentPage = numberPage;
     begin = (numberPage - 1) * maxSize;
@@ -65,6 +66,7 @@ function last(numberPage, length) {
 
 init(begin, end, currentPage, listStudent);
 
+/*Check a string contains special charactors*/
 function checkUnicode(string) {
 	string = string.toLowerCase();
 	string = string.replace(/á|à|ạ|ả|ã|ắ|ằ|ẳ|ẵ|ặ|ấ|ầ|ẫ|ậ|ẩ/g,"a");
@@ -162,7 +164,7 @@ function checkValidate() {
     }
    
 }
-
+/*Set background for textbox*/
 function setdefaultBackground() {
     studentName.style.background = "#fff";
     studentCore.style.background = "#fff";
@@ -171,6 +173,7 @@ function setdefaultBackground() {
     dateOfBirth.style.background = "#fff";
 }
 
+/* Event for button edit */
 function edit(studentId) {
     var studentName = document.getElementById("studentName");
     var studentCore = document.getElementById("studentCore");
@@ -192,6 +195,7 @@ function edit(studentId) {
     });
 }
 
+/* Event for button remove */
 function removeStudent(studentId) {
     var choose = confirm("Do you want to continue?");
     if (choose == true) {
@@ -205,8 +209,9 @@ function removeStudent(studentId) {
                 	blSearch = false;
                 	init(0, maxSize, 1, null);
                 	first();
+                	notification("info", "Remove Student", "successful");
                 } else {
-                    return false;
+                	notification("error", "Remove Student", "fail");
                 }
             }
         });
@@ -216,6 +221,7 @@ function removeStudent(studentId) {
     }
 }
 
+/* Event for button install */
 function insertStudent() {
     var choose = window.confirm("Do you want to continue?");
     if (choose == true) {
@@ -247,6 +253,7 @@ function insertStudent() {
             	blSearch = false;
             	init(0, maxSize, 1, null);
             	last(numberPage, length);
+            	notification("info", "Install Student", "successful");
             });
             return true;
         } else {
@@ -257,6 +264,7 @@ function insertStudent() {
     }
 }
 
+/* Event for button update */
 function updateStudent() {
     var choose = window.confirm("Do you want to continue?" + stId + infoId);
     if (choose == true) {
@@ -290,6 +298,7 @@ function updateStudent() {
             	listStudent = null;
             	listSearch = null;
             	init(0, maxSize, 1, null);
+            	notification("info", "Update Student", "successful");
             });
             return true;
         } else {
@@ -350,6 +359,8 @@ searchByValue.addEventListener("keypress", function(event) {
         }
     }
 });
+
+
 function search(begin, end, currentPage, response) {
 	/* Create table */
     var results = "<tr>" + "<td>#</td>" + "<td><input type='text' class='form-control' id='studentName' /></td>" + "<td><input type='text' class='form-control' id='studentCore' /></td>" + "<td><input type='text' class='form-control' id='address' /></td>" + "<td><input type='text' class='form-control' id='averageScore' /></td>" + "<td><input type='text' class='form-control' id='dateOfBirth' /></td>" + "<td><a class='event fa fa-save' onclick='insertStudent()' title='insert'></a> <a class='event fa fa-refresh' onclick='updateStudent()' title='update'></a></td>" + "</tr>";

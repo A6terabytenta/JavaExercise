@@ -33,29 +33,28 @@
 <body>
 	<%
 		int currentPage = 1;
-		int numberItem = 3;
-		if (request.getParameter("currentPage") != null) {
-			currentPage = Integer.parseInt(request
-			.getParameter("currentPage"));
-		}
-		int firstPosition = (currentPage * numberItem) - numberItem;
-		StudentDao studentDao = new StudentDao();
-		int length = 0;
-		List<Student> list = null;
-		if(request.getAttribute("listStudent") == null){
-			list = studentDao.getListStudent(firstPosition, numberItem);
-			length = studentDao.getListStudent().size();
-		} else {
-			list = (List<Student>)request.getAttribute("listStudent");
-			length = list.size();
-		}
-		int count = firstPosition;
-		int numberPage = 1;
-		if (length % numberItem == 0) {
-			numberPage = length / numberItem;
-		} else {
-			numberPage = (length / numberItem) + 1;
-		}
+			int numberItem = 3;
+			if (request.getParameter("currentPage") != null) {
+				currentPage = Integer.parseInt(request.getParameter("currentPage"));
+			}
+			int firstPosition = (currentPage * numberItem) - numberItem;
+			StudentDao studentDao = new StudentDao();
+			int length = 0;
+			List<Student> list = null;
+			if(request.getAttribute("listStudent") == null){
+				list = studentDao.getListStudent(firstPosition, numberItem);
+				length = studentDao.getListStudent().size();
+			} else {
+				list = (List<Student>)request.getAttribute("listStudent");
+				length = list.size();
+			}
+			int count = firstPosition;
+			int numberPage = 1;
+			if (length % numberItem == 0) {
+				numberPage = length / numberItem;
+			} else {
+				numberPage = (length / numberItem) + 1;
+			}
 	%>
 	<div class="container">
 		<div class="row">
@@ -63,8 +62,8 @@
 				<h2>Search Student</h2>
 				<form action="Search" method="post" class="form-inline">
 					<input type="text" class="form-control" name="search" id="search"
-						placeholder="Search by name" /> <input type="submit"
-						id="submit" class="btn btn-default" value="Search" />
+						placeholder="Search by name" /> <input type="submit" id="submit"
+						class="btn btn-default" value="Search" />
 				</form>
 				<h2>List Student</h2>
 				<table class="table table-reponsive table-hover">
@@ -78,7 +77,7 @@
 					<tbody>
 						<%
 							for (Student student : list) {
-																			count++;
+							count++;
 						%>
 						<tr>
 							<td><%=count%></td>
@@ -126,7 +125,7 @@
 					%>
 					<%
 						for (int i = 1; i <= numberPage; i++) {
-																			if (i == currentPage) {
+						if (i == currentPage) {
 					%>
 					<a href="index.jsp?currentPage=<%=i%>"><div
 							class="item itemActive"><%=i%></div></a>
@@ -137,9 +136,9 @@
 					<%
 						}
 
-																		}
+						}
 
-																		if (currentPage == numberPage) {
+						if (currentPage == numberPage) {
 					%>
 					<div>
 						<span class="glyphicon glyphicon-chevron-right item"></span>
@@ -160,8 +159,10 @@
 						</div></a>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<h3>Add Student</h3>
+		</div>
+		<div class="row">
+				<div class="col-md-6">
+					<h3>Add Student</h3>
 				<form action="AddStudent" method="post">
 					<table class="table">
 						<tr>
@@ -186,8 +187,8 @@
 						</tr>
 					</table>
 				</form>
+				</div>
 			</div>
-		</div>
 	</div>
 	<script type="text/javascript">
 		document.getElementById("btnSubmit").on('submit', function() {

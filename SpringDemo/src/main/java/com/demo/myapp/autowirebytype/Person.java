@@ -1,6 +1,6 @@
 package com.demo.myapp.autowirebytype;
 
-public class Preson {
+public class Person {
 	private Ability ability;
 
 	public Ability getAbility() {
@@ -13,7 +13,7 @@ public class Preson {
 
 	@Override
 	public String toString() {
-		return "Preson [ability=" + ability + "]";
+		return "Person [ability=" + ability + "]";
 	}
 
 }

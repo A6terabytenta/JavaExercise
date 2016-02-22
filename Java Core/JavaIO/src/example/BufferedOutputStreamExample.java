@@ -15,7 +15,7 @@ public class BufferedOutputStreamExample {
 	 * @param source
 	 * @param target
 	 * @throws IOException
-	 *             Execute: Write contents of file input to file output
+	 * Execute: Write contents of file input to file output
 	 */
 	public static void writeFile(String source, String target) {
 		BufferedInputStream bis = null;

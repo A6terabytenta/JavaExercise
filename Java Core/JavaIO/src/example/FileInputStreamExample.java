@@ -10,7 +10,7 @@ public class FileInputStreamExample {
 	 * @author TA
 	 * @param resource
 	 * @throws IOException
-	 *             Execute: read file input and print contents
+	 * Execute: read file input and print contents
 	 */
 	public static void readFile(String resource) {
 		FileInputStream fis = null;

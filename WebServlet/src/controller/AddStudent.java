@@ -47,7 +47,10 @@ public class AddStudent extends HttpServlet {
 		toDo(request, response);
 	}
 
-	public void toDo(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public void toDo(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		String name = request.getParameter("name");
 		String className = request.getParameter("className");
 		String status = request.getParameter("status");
@@ -56,10 +59,10 @@ public class AddStudent extends HttpServlet {
 		student.setName(name);
 		student.setClassName(className);
 		student.setStatus(status);
-		
+
 		StudentDao studentDao = new StudentDao();
 		studentDao.saveStudent(student);
-		
+
 		response.sendRedirect("index.jsp");
 	}
 }

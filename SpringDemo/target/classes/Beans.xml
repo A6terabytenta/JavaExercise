@@ -80,7 +80,7 @@
 	</bean>
  	
  	<!-- Autowiring byType -->
- 	<bean id="preson" class="com.demo.myapp.autowirebytype.Preson" autowire="byType"></bean>
+ 	<bean id="person" class="com.demo.myapp.autowirebytype.Person" autowire="byType"></bean>
  	
  	<bean id="invisible" class="com.demo.myapp.autowirebytype.Ability" >
 		<property name="skill" value="Invisible" />
@@ -106,12 +106,12 @@
 	-->
 	
 	
-	<!-- Event Handling -->
-	<bean id="eventHandling" class="com.demo.myapp.eventhandling.HelloWorld">
+	<!-- Event Handling  -->
+	<bean id="helloWorld" class="com.demo.myapp.eventhandling.HelloWorld">
 		<property name="message" value="Nguyen Tuan Anh"></property>
 	</bean>
-	<bean id="cStartEventHandling" class="com.demo.myapp.CStartEventHandling">
+	<bean id="cStartEventHandling" class="com.demo.myapp.eventhandling.CStartEventHandling">
 	</bean>
-	<bean id="cStopEventHandling" class="com.demo.myapp.CStopEventHandling">
+	<bean id="cStopEventHandling" class="com.demo.myapp.eventhandling.CStopEventHandling">
 	</bean>
 </beans>

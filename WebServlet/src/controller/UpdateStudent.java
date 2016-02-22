@@ -34,6 +34,8 @@ public class UpdateStudent extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		int id = Integer.parseInt(request.getParameter("id"));
 
 		StudentDao studentDao = new StudentDao();
@@ -44,7 +46,8 @@ public class UpdateStudent extends HttpServlet {
 		request.setAttribute("name", student.getName());
 		request.setAttribute("className", student.getClassName());
 		request.setAttribute("status", student.getStatus());
-		RequestDispatcher requestDispatcher = getServletContext().getRequestDispatcher("/update.jsp");
+		RequestDispatcher requestDispatcher = getServletContext()
+				.getRequestDispatcher("/update.jsp");
 		requestDispatcher.forward(request, response);
 	}
 
@@ -55,6 +58,8 @@ public class UpdateStudent extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		int id = Integer.parseInt(request.getParameter("id"));
 		String name = request.getParameter("name");
 		String className = request.getParameter("className");

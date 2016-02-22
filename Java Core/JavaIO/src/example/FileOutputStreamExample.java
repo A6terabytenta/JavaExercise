@@ -11,7 +11,7 @@ public class FileOutputStreamExample {
 	 * @param source
 	 * @param target
 	 * @throws IOException
-	 *             Execute: Write contents of file input to file output
+	 * Execute: Write contents of file input to file output
 	 */
 	public static void writeFile(String source, String target) {
 		FileInputStream fis = null;
