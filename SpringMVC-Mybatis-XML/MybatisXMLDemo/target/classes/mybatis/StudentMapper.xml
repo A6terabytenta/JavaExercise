@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exercise.spring.mapper.StudentMapper">
+	<resultMap type="com.exercise.spring.model.Student" id="studentResult">
+		<id property="studentId" column="STUDENT_ID" javaType="int"/>
+		<result property="studentCore" column="STUDENT_CORE" />
+		<result property="studentName" column="STUDENT_NAME" />
+		<association property="studentInfo" javaType="com.exercise.spring.model.StudentInfo">
+			<id property="infoId" column="INFO_ID" />
+			<result property="address" column="ADDRESS" />
+			<result property="averageScore" column="AVERAGE_SCORE" />
+			<result property="dateOfBirth" javaType="java.util.Date" jdbcType="TIMESTAMP" column="DATE_OF_BIRTH" />
+			<result property="studentId" column="STUDENT_ID" />
+		</association>
+	</resultMap>
+	
+	<resultMap type="com.exercise.spring.model.Student" id="student">
+		<id property="studentId" column="STUDENT_ID" javaType="int"/>
+		<result property="studentCore" column="STUDENT_CORE" />
+		<result property="studentName" column="STUDENT_NAME" />
+	</resultMap>
+	
+	<select id="getListStudent" resultMap="studentResult">
+		SELECT
+			student.STUDENT_ID,
+			student.STUDENT_NAME,
+			student.STUDENT_CORE,
+			student_info.STUDENT_ID,
+			student_info.ADDRESS,
+			student_info.AVERAGE_SCORE,
+			student_info.DATE_OF_BIRTH
+		FROM
+			exercise.student_info,
+			exercise.student
+		WHERE
+			student.STUDENT_ID = student_info.STUDENT_ID;
+	</select>
+	<select id="getStudentById" parameterType = "int" resultMap="studentResult">
+		SELECT
+			student.STUDENT_ID,
+			student.STUDENT_NAME,
+			student.STUDENT_CORE,
+			student_info.STUDENT_ID,
+			student_info.ADDRESS,
+			student_info.AVERAGE_SCORE,
+			student_info.DATE_OF_BIRTH
+		FROM
+			exercise.student_info,
+			exercise.student
+		WHERE
+			student.STUDENT_ID = #{studentId};	
+	</select>
+	
+	<select id="selectLastStudent" resultMap="student">
+		SELECT * FROM student ORDER BY student_id DESC LIMIT 1
+	</select>
+	
+	<insert id="insertStudent" parameterType = "com.exercise.spring.model.Student">
+		INSERT INTO student (STUDENT_NAME, STUDENT_CORE) VALUES (#{studentName}, #{studentCore});
+	</insert>
+	<update id="updateStudent" parameterType = "com.exercise.spring.model.Student">
+		UPDATE 
+			student 
+		SET 
+			STUDENT_NAME = #{studentName}, 
+			STUDENT_CORE = #{studentCore}
+		WHERE 
+			STUDENT_ID = #{studentId};
+	</update>
+	<delete id="deleteStudent" parameterType = "int">
+		DELETE FROM student WHERE STUDENT_ID = #{studentId};
+	</delete>
+	
+	<select id="search" parameterType="map" resultMap="studentResult">
+		SELECT
+			student.STUDENT_ID,
+			student.STUDENT_NAME,
+			student.STUDENT_CORE,
+			student_info.STUDENT_ID,
+			student_info.ADDRESS,
+			student_info.AVERAGE_SCORE,
+			student_info.DATE_OF_BIRTH
+		FROM
+			exercise.student_info INNER JOIN
+			exercise.student ON student.STUDENT_ID = student_info.STUDENT_ID
+		WHERE
+			#{element} LIKE #{value}#;
+	</select>
+</mapper>

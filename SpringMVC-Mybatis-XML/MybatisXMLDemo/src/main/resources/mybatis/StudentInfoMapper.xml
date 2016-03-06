@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exercise.spring.mapper.StudentInfoMapper">
+	<resultMap type="com.exercise.spring.model.StudentInfo" id="studentInfo">
+		<id property="infoId" column="INFO_ID" javaType="int" />
+		<result property="studentId" column="STUDENT_ID" />
+		<result property="address" column="ADDRESS" />
+		<result property="averageScore" column="AVERAGE_SCORE" javaType="java.lang.Double" />
+		<result property="dateOfBirth" column="DATE_OF_BIRTH" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<insert id="insertStudentInfo" parameterType="com.exercise.spring.model.StudentInfo">
+		INSERT INTO
+		student_info (ADDRESS, AVERAGE_SCORE, DATE_OF_BIRTH, STUDENT_ID)
+		VALUES (#{address}, #{averageScore}, #{dateOfBirth}, #{studentId})
+	</insert>
+
+	<update id="updateStudentInfo" parameterType="com.exercise.spring.model.StudentInfo">
+		UPDATE
+		student_info
+		SET
+		ADDRESS = #{address},
+		AVERAGE_SCORE = #{averageScore},
+		DATE_OF_BIRTH = #{dateOfBirth}
+		WHERE
+		STUDENT_ID = #{studentId};
+	</update>
+
+	<delete id="deleteStudentInfo" parameterType="int">
+		DELETE FROM
+		student_info WHERE STUDENT_ID = #{studentId};
+	</delete>
+</mapper>

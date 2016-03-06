@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.exercise.spring.model.StudentInfo" table="student_info"
+		catalog="exercise">
+		<id name="infoId" type="int">
+			<column name="INFO_ID" />
+			<generator class="native" />
+		</id>
+		<property name="address" type="string">
+			<column name="ADDRESS" length="200" not-null="true"></column>
+		</property>
+		<property name="averageScore" type="double">
+			<column name="AVERAGE_SCORE" not-null="true"></column>
+		</property>
+		<property name="dateOfBirth" type="timestamp" length="10">
+			<column name="DATE_OF_BIRTH" not-null="true"></column>
+		</property>
+		<property name="studentId" type="int">
+			<column name="STUDENT_ID" not-null="true">
+			</column>
+		</property>
+		<one-to-one name="student" class="com.exercise.spring.model.Student"
+			constrained="true" cascade="save-update">
+		</one-to-one>
+	</class>
+</hibernate-mapping>

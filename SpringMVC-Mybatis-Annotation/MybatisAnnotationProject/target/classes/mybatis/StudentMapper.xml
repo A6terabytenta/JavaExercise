@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exercise.spring.dao.StudentDao">
+	<resultMap type="result" id="student">
+		<result property="id" column="ID"/>
+		<result property="studentCore" column="STUDENT_CORE"/>
+		<result property="studentName" column="STUDENT_NAME"/>
+		<result property="className" column="CLASS_NAME"/>
+		<result property="address" column="ADDRESS"/>
+		<result property="phoneNumber" column="PHONE_NUMBER"/>
+		<result property="dayOfBirth" column="DAY_OF_BIRTH"/>
+	</resultMap>
+	
+	<select id="getListStudent" parameterType="int" resultMap="result">
+		SELECT * FROM student
+	</select>
+</mapper>
