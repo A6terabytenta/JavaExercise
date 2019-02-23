@@ -1,4 +1,4 @@
-var host = 'http://localhost:8081/spring/';
+var url = location.protocol + "//" + location.host + "/spring/"; 
 var currentPage = 1;
 var maxSize = 5;
 var numberPage = 1;
@@ -182,7 +182,7 @@ function edit(studentId) {
     var dateOfBirth = document.getElementById("dateOfBirth");
     $.ajax({
         type: 'GET',
-        url: host + 'rest/getStudentById/' + studentId,
+        url: url + 'rest/getStudentById/' + studentId,
         success: function(response) {
             stId = response.studentId;
             infoId = response.studentInfo.infoId;
@@ -201,7 +201,7 @@ function removeStudent(studentId) {
     if (choose == true) {
         $.ajax({
             type: 'DELETE',
-            url: host + 'rest/deleteStudent/' + studentId,
+            url: url + 'rest/deleteStudent/' + studentId,
             success: function(response) {
                 if (response.errorCore == "True") {
                 	listSearch = null;
@@ -243,7 +243,7 @@ function insertStudent() {
             }
             $.ajax({
                 method: 'POST',
-                url: host + 'rest/saveOrUpdateStudent',
+                url: url + 'rest/saveOrUpdateStudent',
                 data: JSON.stringify(student),
                 contentType: 'application/json',
                 dataType: 'json',
@@ -289,7 +289,7 @@ function updateStudent() {
             console.log(student);
             $.ajax({
                 method: 'POST',
-                url: host + 'rest/saveOrUpdateStudent',
+                url: url + 'rest/saveOrUpdateStudent',
                 data: JSON.stringify(student),
                 contentType: 'application/json',
                 dataType: 'json',
@@ -341,7 +341,7 @@ searchByValue.addEventListener("keypress", function(event) {
         	var results = value.split(":");
             $.ajax({
                 type: 'GET',
-                url: host + "rest/search/" + results[0] + "," + results[1],
+                url: url + "rest/search/" + results[0] + "," + results[1],
                 success: function(response) {
                 	if(response.length > 0) {
                 		blSearch = true;
@@ -473,7 +473,7 @@ function init(begin, end, currentPage, listSt) {
     $
         .ajax({
             type: 'GET',
-            url: host + 'rest/getListStudent',
+            url: url + 'rest/getListStudent',
             success: function(response) {
             	if(listSt != null) {
             		response = listSt;

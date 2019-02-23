@@ -5,6 +5,7 @@ import java.util.List;
 import com.exercise.spring.model.Student;
 
 public interface StudentService {
+
 	public void saveOrUpdateStudent(Student student);
 
 	public void deleteStudent(int studentId);
